@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './contactStyle.scss'
 export default function Contact() {
   return (
     // contact banner card

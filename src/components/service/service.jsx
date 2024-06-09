@@ -3,6 +3,8 @@ import ShippingImg from '../../../public/shipping.png'
 import Lockimg from '../../../public/lock.png'
 import Returnimg from '../../../public/returns.png'
 import Trackimg from '../../../public/trackking.png'
+import './serviceStyle.scss'
+
 export default function Service() {
   return (
     <div className='md:grid md:grid-cols-2 md:gap-10 md:py-10 lg:grid-cols-4 2xl:my-10'>
@@ -17,13 +19,13 @@ export default function Service() {
 
 export function ServiceCard(props){
     return(
-        <>
+        <section className="service-section">
         <div className='text-center grid grid-cols-1 justify-center items-center gap-2 2xl:gap-5 my-4'>
             <img src={props.img} alt={props.alt}  className='w-20 mx-auto 2xl:w-32  '  />
-            <h3 className='text-black 2xl:text-3xl'>{props.proprity_name}</h3>
-            <p className='text-black 2xl:text-2xl'>{props.proprity_para}</p>
+            <h3 className='text-xl font-bold  2xl:text-3xl'>{props.proprity_name}</h3>
+            <p className=' 2xl:text-2xl'>{props.proprity_para}</p>
         </div>
         
-        </>
+        </section>
     )
 }

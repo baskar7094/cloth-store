@@ -1,55 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'inter';
-    text-transform: capitalize;
-}
-
-@mixin link {
-    color: white;
-    font-size: 15px;
-    border: 1px solid;
-    padding: 5px 5px;
 
 
-}
-
-@mixin hover {
-    border: 1px solid rgb(238, 84, 24);
-    box-shadow: 1px 1px 1px 0px transparent;
-    color: rgb(238, 84, 24);
-    font-weight: 700;
-
-}
-
-.link-hover {
-    @include link();
-    font-size: 18px;
-    padding: 5px 10px;
-}
-
-.link-hover:hover {
-    @include hover()
-}
 
 
-.bg-img {
-    background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-01.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    width: 100vw;
-    height: 100vh;
-
-
-}
 
 
 .layout-section {
@@ -60,56 +15,8 @@
     }
 }
 
-.home-section {
-    div {}
-}
 
-.bannerimg {
-    background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-02.jpg');
-    width: 100vw;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
 
-.bannerimg-02 {
-    background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-05-1.jpg');
-    width: 100vw;
-    height: 70vh;
-    background-position: center;
-    background-size: 190%;
-    background-position-x: right;
-    background-repeat: no-repeat;
-
-}
-
-.bannerimg-03 {
-    background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-03.jpg');
-    width: 100vw;
-    height: 100vh;
-    background-size: 340%;
-    background-position: center;
-    background-repeat: no-repeat;
-
-}
-
-.banner04 {
-    background: linear-gradient(rgba(56, 50, 50, 0.5), rgba(0, 0, 0, 0.5)), url('../public/bg-005.jpg');
-    width: 100vw;
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.contact-bg {
-    background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-04.jpg');
-    width: 100vw;
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
-}
 
 
 .footer-section {
@@ -153,8 +60,17 @@
     }
 
 }
+@media screen and (max-width:768px ) {
+   
+}
 
 @media screen and (min-width:425px) {
+*{
+    margin:0;
+    padding:0;
+    text-tranform:capitalize;
+}
+
     .bannerimg {
         background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-02.jpg');
         width: 100vw;
@@ -163,6 +79,8 @@
         background-size: cover;
         background-attachment: fixed;
     }
+ 
+    
 }
 
 
@@ -176,37 +94,14 @@
         background-size: cover;
         background-attachment: fixed;
     }
-
-    .bannerimg-02 {
-        background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-05-1.jpg');
-        width: 100vw;
-        height: 100vh !important;
-        background-position: center;
-        background-size: 190%;
-        background-position-x: right;
-        background-repeat: no-repeat;
-
+    #toggle{
+        display: flex;
     }
-
-    .bannerimg-03 {
-        background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-03.jpg');
-        width: 100vw;
-        height: 80vh;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
+    .toggleshow{
+        display: flex !important;
     }
-
-    .banner04 {
-        background: linear-gradient(rgba(56, 50, 50, 0.5), rgba(0, 0, 0, 0.5)), url('../public/bg-005.jpg');
-        width: 100vw;
-        height: 80vh;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
+    
+    
     .contact-bg {
         background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-04.jpg');
         width: 100vw;
@@ -214,6 +109,14 @@
         background-size: cover;
         background-position: center;
     }
+    .layout-section {
+    .response-div {
+        a {
+            font-size: 26px;
+        }
+    }
+}
+
 
 }
 
@@ -226,18 +129,9 @@
         }
     }
 
-    .link-hover {
-        @include link();
-        font-size: 22px;
-        padding: 8px 20px;
-    }
+  
 
-    .link-hover:hover {
-        @include hover();
-        font-weight: 900;
-
-
-    }
+   
 
 
 }
@@ -274,15 +168,9 @@
         }
     }
 
-    .link-hover {
-        @include link();
-        font-size: 48px;
-        padding: 15px 30px;
-    }
+    
 
-    .link-hover:hover {
-        @include hover()
-    }
+   
 
     .footer-section {
         div {

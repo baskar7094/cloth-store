@@ -1,0 +1,43 @@
+.bannerimg {
+    background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-02.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bannerimg-02 {
+    background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-05-1.jpg');
+    width: 100vw;
+    height: 70vh;
+    background-position: center;
+    background-size: 190%;
+    background-position-x: right;
+    background-repeat: no-repeat;
+
+}
+
+.bannerimg-03 {
+    background: linear-gradient(rgba(56, 50, 50, 0.4), rgba(0, 0, 0, 0.3)), url('../public/bg-03.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-size: 340%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.banner04 {
+    background: linear-gradient(rgba(56, 50, 50, 0.5), rgba(0, 0, 0, 0.5)), url('../public/bg-005.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bannercart-02{
+div , p ,h2 ,a{
+	color:black !important
+}
+}

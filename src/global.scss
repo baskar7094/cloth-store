@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter' ;
+    font-weight:500;
+    overflow-x:hidden;
+    color: white !important;
+}
+
+@mixin link {
+}
+
+@mixin hover {
+    border: 2px solid rgb(238, 84, 24);
+    box-shadow: 1px 1px 1px 10px transparent;
+    color: rgb(238, 84, 24) !important;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width:600px) {
+
+.link-hover:hover{
+    @include hover();
+}
+}

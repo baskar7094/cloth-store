@@ -1,0 +1,27 @@
+
+
+
+@media screen and (max-width:540px) {
+
+	 #toggle{
+        display: none;
+    }
+    .toggleshow{
+        display: flex !important;
+    }
+.hiddenitem{
+	display:none;
+}
+.layout-section{
+	nav{
+
+			img{
+				width: 100px;
+		}
+		 button ,i {
+color: white !important;
+		}
+
+}
+}
+}

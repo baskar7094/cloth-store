@@ -1,11 +1,12 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './footerStyle.scss'
 
 export default function Footer() {
   return (
-    <section className='footer-section'>
-      <div className='md:grid md:grid-cols-2 md:py-10 md:gap-10 lg:grid-cols-4' >
+    <section className='footer-section '>
+      <div className='md:grid md:grid-cols-2 bg-cyan-800 md:py-10 md:gap-10 lg:grid-cols-4' >
         <article >
 <h2>menu</h2>
 <div>
