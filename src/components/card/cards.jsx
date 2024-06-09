@@ -6,6 +6,7 @@ import IMg04 from '../../../public/img-05-a-white-246x300.jpg'
 import IMg05 from '../../../public/img-03-a-400x488.jpg'
 import BannerImg, { Banner02, Banner03 } from './banner'
 import Bannerimg02 from '../../../public/img-05-a-white-300x366.jpg'
+import { Link } from 'react-router-dom'
 
 export default function Cards() {
     return (
@@ -43,10 +44,11 @@ export default function Cards() {
 }
 
 function FristCard() {
+    
     return (<>
         <div className='grid grid-cols-1 px-5 gap-10 p-10 md:grid-cols-3 md:px-7 md:gap-14 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-5'>
 
-            <div>
+            <Link to={'/products'} className='hover:scale-105  duration-500'>
                 <CardItem work_name="evening dress"
                  brand_name="minnight gala maxi dress" 
                  price="$175.90"
@@ -55,9 +57,9 @@ function FristCard() {
                   />
 
                 <Card_Content />
-            </div>
+            </Link>
 
-            <div>
+            <Link to={'/products'} className='hover:scale-105  duration-500'>
                 <CardItem work_name="evening dress"
                  brand_name="minnight gala maxi dress"
                   price="$175.90"
@@ -66,9 +68,9 @@ function FristCard() {
                     />
 
                 <Card_Content />
-            </div>
+            </Link>
 
-            <div>
+            <Link to={'/products'} className='hover:scale-105  duration-500'>
                 <CardItem work_name="evening dress"
                  brand_name="minnight gala maxi dress"
                   price="$175.90"
@@ -77,9 +79,9 @@ function FristCard() {
                     />
 
                 <Card_Content />
-            </div>
+            </Link>
 
-            <div>
+            <Link to={'/products'} className='hover:scale-105  duration-500'>
                 <CardItem work_name="evening dress"
                  brand_name="minnight gala maxi dress"
                   price="$175.90"
@@ -88,27 +90,27 @@ function FristCard() {
                     />
                     
                 <Card_Content />
-            </div>
+            </Link>
 
-           <div>
+           <Link to={'/products'} className='hover:scale-105  duration-500'>
                 <CardItem work_name="evening dress" brand_name="minnight gala maxi dress" price="$175.90" img={IMg05} alt="..." />
                 <Card_Content />
-            </div>
+            </Link>
 
-            <div>
+            <Link to={'/products'} className='hover:scale-105  duration-500'>
                 <CardItem work_name="evening dress" brand_name="minnight gala maxi dress" price="$175.90" img={IMg02} alt="..." />
                 <Card_Content />
-            </div>
+            </Link>
 
-            <div>
+            <Link to={'/products'} className='hover:scale-105  duration-500'>
                 <CardItem work_name="evening dress" brand_name="minnight gala maxi dress" price="$175.90" img={IMg01} alt="..." />
                 <Card_Content />
-            </div>
+            </Link>
 
-            <div>
+            <Link to={'/products'} className='hover:scale-105  duration-500'>
                 <CardItem work_name="evening dress" brand_name="minnight gala maxi dress" price="$175.90" img={IMg01} alt="..." />
                 <Card_Content />
-            </div>
+            </Link>
 
         </div>
     </>)
@@ -117,10 +119,18 @@ function FristCard() {
 function SecondCard() {
     return (
         <div className='grid grid-cols-1 gap-10 p-10 md:grid-cols-2 lg:grid-cols-4 '>
+          <Link to={'/products'} className='hover:scale-105  duration-500'>
             <CardItem img={IMg01} alt="..." work_name="activewear" brand_name="professional pinscripe blazer" price="$109.99" />
+          </Link>
+          <Link to={'/products'} className='hover:scale-105  duration-500'>
             <CardItem img={IMg02} alt="..." work_name="activewear" brand_name="professional pinscripe blazer" price="$109.99" />
+          </Link>
+          <Link to={'/products'} className='hover:scale-105  duration-500'>
             <CardItem img={IMg03} alt="..." work_name="activewear" brand_name="professional pinscripe blazer" price="$109.99" />
+          </Link>
+          <Link to={'/products'} className='hover:scale-105  duration-500'>
             <CardItem img={IMg04} alt="..." work_name="activewear" brand_name="professional pinscripe blazer" price="$109.99" />
+          </Link>
 
         </div>
     )

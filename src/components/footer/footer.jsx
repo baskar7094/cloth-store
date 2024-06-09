@@ -10,7 +10,7 @@ export default function Footer() {
 <h2>menu</h2>
 <div>
 
-<Link>home</Link>
+<Link >home</Link>
 <Link>shop</Link>
 <Link>about us</Link>
 <Link>contact us</Link>

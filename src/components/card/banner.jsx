@@ -59,3 +59,11 @@ export function Banner04(props) {
 
         </div>)
 }
+
+export function CartBanner(props){
+    return(
+        <div className='ring-2 p-10 my-5 bg-cyan-800 shadow-md shadow-cyan-500'>
+            <h3 className='xl:text-4xl text-center text-red-500 uppercase'>{props.name}</h3>
+        </div>
+    )
+}

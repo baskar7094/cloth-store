@@ -1,80 +1,125 @@
-import { useEffect, useState } from "react"
 import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import './style.scss'
+import { Link } from 'react-router-dom'
+
+const woamn_uri = 'http://localhost:3000/woman'
+const boys_uri = 'http://localhost:3000/boys'
 
 
-export default function Adminpage() {
+
+export default function AdminPage() {
     return (
-        <div className="text-black">
+        <div className='grid grid-cols-2 gap-5 '>
+<WomanFecth/>
+<BoysFecth/>
 
-            admin page welcome you!....
-
-            sooo i love you this website
-            <StateMangement/>
+<Link to={'/view-woman-page'}>woman-page</Link>
+<Link to={'/view-boys-page'}>boys-page</Link>
         </div>
     )
 }
 
-export const StateMangement = (props) => {
+export function WomanFecth() {
     const [data, setdata] = useState([])
-    const [name,setname] = useState('')
-    const [img,setimg] = useState('')
-    const [price,setprice] = useState()
+    const [img, setimg] = useState()
+    const [name, setname] = useState()
+    const [alt, setalt] = useState()
+    const [describtion, setdescribtion] = useState()
+    const [price, setprice] = useState()
 
     useEffect(() => {
-        fecthdata()
-    },[])
+        fetchwoman()
+    }, [])
 
-    const fecthdata = async () => {
-        const response = await axios.get('http://localhost:3000/woman')
-        setdata(response.data)
-        console.log(response.data)
+    const fetchwoman = async () => {
+        try {
+            const response = await axios.get(woamn_uri) 
+            setdata(response.data)
+        } catch (error) {
+                console.log(' woman get err',error)
+        }
     }
 
-const postdata =async  (event)=>{
-    event.preventDefault()
-    const response = await axios.post('http://localhost:3000/woman',{brandname:name,img:img,price:price})
-    console.log(response.data)
-     fecthdata()
-}
-const deleteitem =async  (id)=>{
-    const response = await axios.delete(`http://localhost:3000/woman/${id}`)
-    console.log(response.data)
-    fecthdata()
-}
+    const postdata =async (e)=>{
+        e.preventDefault()
+        try {
+            const response = await axios.post(woamn_uri,{img:img,name:name,price:price,descri:describtion,alt:alt})
+            console.log(response.data)
+        } catch (error) {
+            console.log('woman post err',error)
+        }
 
-    return (
-        <>
-
-        {data.flatMap((i)=>(
-<li className="bg-black text-white ">{i._id}</li>
-        ))}
-            <h4>data as show successfully! </h4>
-            {data.map((i,n) => (
-                <div key={n} className="flex flex-col justify-center items-center mx-40 ">
-<img src={i.img} alt="..." className="w-20 h-auto" />
-<p className="text-black">{i.price}</p>
-<p className="text-black">{i.brandname}</p>
-<button type="button" className="px-5 py-3 bg-red-500  shadow-2xl shadow-black" onClick={()=>deleteitem(i._id)}>delete item </button>
-                
-                </div>
-            ))}
-
-<form onSubmit={postdata} className="flex flex-col w-60 mx-auto text-center gap-5">
-    <label htmlFor="" className="text-xl font-bold text-green-500">img label</label>
-    <input type="text" value={img}  onChange={(e)=>setimg(e.target.value)} className="text-black bg-gray-400 px-5 py-3 ring-2 ring-gray-900 " placeholder="enter img string"  required />
-    <label htmlFor="" className="text-xl font-bold text-green-500">price label</label>
-    <input type="text" value={price} onChange={(e)=>setprice(e.target.value)} className="text-black bg-gray-400 px-5 py-3 ring-2 ring-gray-900" placeholder="enter prive value" required/>
-    <label htmlFor="" className="text-xl font-bold text-green-500">name label</label>
-    <input type="text" value={name} onChange={(e)=>setname(e.target.value)} className="text-black bg-gray-400 px-5 py-3 ring-2 ring-gray-900" placeholder="enter name " required/>
-    <input type="submit" value={'submit'} className="text-black ring-2 ring-gray-600" />
-</form>
-
-
-
-        </>
-    )
+        fetchwoman()
+        }
+       
+return(
+    <section className='bg-black w-60 woman-section'>
+        <form className='flex flex-col p-10 gap-5' onSubmit={postdata}>
+            <h2>woman controls </h2>
+<label htmlFor="img"> enter img</label>
+<input type="text" value={img} onChange={(e)=>setimg(e.target.value)} placeholder='enter img url ' />
+<label htmlFor="img"> enter alt</label>
+<input type="text" value={alt} onChange={(e)=>setalt(e.target.value)} placeholder='enter alt name ' />
+<label htmlFor="img"> enter name</label>
+<input type="text" value={name} onChange={(e)=>setname(e.target.value)} placeholder='enter brand name ' />
+<label htmlFor="img"> enter describtion</label>
+<input type="text" value={describtion} onChange={(e)=>setdescribtion(e.target.value)} placeholder='enter describtion ' />
+<label htmlFor="img"> enter price</label>
+<input type="number" value={price} onChange={(e)=>setprice(e.target.value)} placeholder='enter prive RS : ' />
+        <input type="submit" value="submit" className='bg-red-500' />
+        </form>
+    </section>
+)
 
 
 }
+export function BoysFecth() {
+    const [data, setdata] = useState([])
+    const [img, setimg] = useState()
+    const [name, setname] = useState()
+    const [alt, setalt] = useState()
+    const [describtion, setdescribtion] = useState()
+    const [price, setprice] = useState()
 
 
+    useEffect(() => {
+        fetchboys()
+    }, [])
+
+
+const fetchboys = async ()=>{
+    const response = axios.get(boys_uri)
+    setdata(response.data)
+
+}
+const postdata =async (e)=>{
+    e.preventDefault()
+    try {
+        const response = await axios.post(boys_uri,{img:img,name:name,price:price,descri:describtion,alt:alt})
+        console.log(response.data)
+    } catch (error) {
+        console.log('woman post err',error)
+    }
+
+    fetchboys()
+    }
+return(
+    <section className='bg-black w-60 woman-section'>
+    <form className='flex flex-col p-10 gap-5' onSubmit={postdata}>
+        <h2 className=''>boys controls </h2>
+<label htmlFor="img"> enter img</label>
+<input type="text" value={img} onChange={(e)=>setimg(e.target.value)} placeholder='enter img url ' />
+<label htmlFor="img"> enter alt</label>
+<input type="text" value={alt} onChange={(e)=>setalt(e.target.value)} placeholder='enter alt name ' />
+<label htmlFor="img"> enter name</label>
+<input type="text" value={name} onChange={(e)=>setname(e.target.value)} placeholder='enter brand name ' />
+<label htmlFor="img"> enter describtion</label>
+<input type="text" value={describtion} onChange={(e)=>setdescribtion(e.target.value)} placeholder='enter describtion ' />
+<label htmlFor="img"> enter price</label>
+<input type="number" value={price} onChange={(e)=>setprice(e.target.value)} placeholder='enter prive RS : ' />
+    <input type="submit" value="submit" className='bg-red-500' />
+    </form>
+</section>
+)
+}

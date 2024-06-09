@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import Cards from "./card/cards";
 import Contact from "./contact";
 import Service from "./service/service";
-import { Banner04 } from "./card/banner";
+import { Banner04, CartBanner } from "./card/banner";
 import Footer from "./footer/footer";
 
 export default function HomePage() {
@@ -30,7 +30,9 @@ export default function HomePage() {
                 <section>
 
                     <div className="my-6 ">
-                        <h2 className="text-3xl text-center py-4 text-black font-bold 2xl:text-8xl 2xl:py-20 ">most popular</h2>
+        <div>
+            <h2 className="text-3xl font-bold p-3 text-center">woman dress's</h2>
+        </div>
                         <Cards />
 
                     </div>
